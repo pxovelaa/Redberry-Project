@@ -1,0 +1,17 @@
+.SeeUser_button {
+    width: 23%;
+    height: 60px;
+    margin-top: calc(1080px*0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SeeUser_button button {
+    width: 100%;
+    padding: 18px 60px;
+    border-radius: 8px;
+    border-color: #fff;
+    background-color: #62A1EB;
+    color: #fff;
+}
