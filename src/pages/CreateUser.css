@@ -1,0 +1,55 @@
+body {
+    background-color:  #F6F6F6;
+}
+
+.container {
+    width: 72%;
+    margin: 0 auto;
+}
+
+.vector {
+    position: absolute;
+    top: 50px;
+    left: 70px;
+    width: 10px;
+    height: 16px;
+    padding: 16px 20px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+}
+
+.user_info {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+
+.user_info :first-child {
+    margin-right: 50px;
+}
+
+.active_page {
+    text-decoration: underline;
+    padding-bottom: 5px;
+}
+
+/* inputs css */
+
+form {
+    width: 63%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.name {
+    width: calc(878PX/2 - 140PX);
+    height: 55px;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.inputs-container {
+    display: flex;
+    justify-content: space-between;
+}
