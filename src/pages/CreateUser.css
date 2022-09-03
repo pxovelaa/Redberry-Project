@@ -1,5 +1,6 @@
 body {
     background-color:  #F6F6F6;
+    padding-top: 50px;
 }
 
 .container {
@@ -22,7 +23,7 @@ body {
     font-size: 20px;
     display: flex;
     justify-content: center;
-    margin-top: 4%;
+    margin-top: 7%;
 }
 
 .user_info :first-child {
@@ -40,6 +41,9 @@ form {
     width: 63%;
     margin: 0 auto;
     background-color: #fff;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    margin-top: 50px;
 }
 
 .name {
@@ -52,4 +56,38 @@ form {
 .inputs-container {
     display: flex;
     justify-content: space-between;
+}
+
+/* submit button css */
+
+.submit-button {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 20px;
+}
+
+.submit-button button {
+    padding: 18px 40px;
+    border-radius: 8px;
+    background-color: #62A1EB;
+    color: #fff;
+    border-color: #62A1EB;
+    cursor: pointer;
+}
+
+.contact-field {
+    width: 100%;
+    background-color: #EBEBEB;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    height: 55px;
+    border-radius: 8px;
+    margin-top: 50px;
+}
+
+.contact-info input {
+    height: 55px;
+    border-radius: 8px;
+    font-size: 18px;
 }
