@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./SelectedInput.css";
 
 export default function SelectedPosition(props) {
+  const {onChange, value, posId, ...SelectedInput} = props;
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -31,12 +32,13 @@ export default function SelectedPosition(props) {
     return <p>Loading...</p>;
   }
 
+
   return (
     <div className="container">
-      <select className="selected-input" onChange={props.changePositionHandler}>
+      <select className="selected-input"  {...SelectedInput} onChange={onChange}>
         <option key="პოზიცია">პოზიცია</option>
         {data
-          .filter((position) => +position.id === +props.teamId)
+          .filter((position) => +position.id === +posId.currentTeamId)
           .map(({ label, value, id }) => {
             return (
               <option key={value} value={value} id={id}>

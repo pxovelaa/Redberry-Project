@@ -83,7 +83,11 @@ form {
     font-weight: 500;
     height: 55px;
     border-radius: 8px;
-    margin-top: 50px;
+    margin-top: 10px;
+}
+
+.contact-field input{
+    margin-top: 10px;
 }
 
 .contact-info input {
@@ -91,3 +95,19 @@ form {
     border-radius: 8px;
     font-size: 18px;
 }
+
+.red-comment {
+    color: #00000099;
+}
+
+
+input:invalid ~ .red-comment {
+    color: red;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+
+

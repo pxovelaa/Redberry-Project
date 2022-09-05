@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./SelectedInput.css";
 
 export default function SelectedInput(props) {
+  const {onChange, value, ...SelectedInput} = props;
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -11,7 +12,7 @@ export default function SelectedInput(props) {
       const res = await fetch("https://pcfy.redberryinternship.ge/api/teams");
       const body = await res.json();
 
-      setData(body.data.map(({ name, id }) => ({ label: name, value: name, id: id })));
+      setData(body.data.map(({ name, id }) => ({ Label: name, Value: name, Id: id })));
       // setData([...body]);
       setIsLoading(false);
     }
@@ -24,14 +25,14 @@ export default function SelectedInput(props) {
 
   return (
     <div className="container">
-      <select className="selected-input" onChange={props.changeTeamHandler}>
-        <option key="თიმი" id={0}>
+      <select className="selected-input"  {...SelectedInput}  onChange={onChange}>
+        <option key="თიმი" id={16}>
           თიმი
         </option>
-        {data.map(({ label, value, id}) => {
+        {data.map(({ Label, Value, Id}) => {
           return (
-            <option key={value} value={value} id={id} >
-              {label}
+            <option key={Value} value={Value} id={Id}  >
+              {Label}
             </option>
           );
         })}
