@@ -109,5 +109,18 @@ input:invalid {
     border-color: red;
 }
 
+.cpu-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+}
+
+.cpu-width {
+    width: 170px;
+    height: 60px;
+    margin-top: 0;
+}
+
 
 

@@ -4,9 +4,9 @@ import "./CreateUser.css";
 import { Link } from "react-router-dom";
 import TextInput from "../components/TextInput";
 import SubmitButton from "../components/SubmitButton";
-import SelectedInput from "../components/SelectedInput";
-import SelectedPosition from "../components/SelectedPosition";
 import DragImage from "../components/DropImage";
+import LaptopBrand from "../components/LaptopBrand";
+import Cpu from "../components/Cpu";
 
 // titoelu inputistvis vidzaxebt useStates
 
@@ -27,74 +27,59 @@ const CreateLaptopInfo = (props) => {
     laptop_price: "",
   });
 
-  const inputs = [
+  const input1 = [
     {
-      id: 1,
+      id: 7,
       type: "text",
-      label: "სახელი",
-      name: "name",
-      placeholder: "გრიშა",
+      label: "ლეპტოპის სახელი",
+      name: "laptop_name",
+      placeholder: "HP",
       className: "name",
-      comment: "მინიმუმ 2 სიმბოლო, ქართული ასოები",
-      pattern: '^[ა-ჰ]{2,}$',
-      required: true,
-    },
-    {
-      id: 2,
-      type: "text",
-      label: "გვარი",
-      name: "surname",
-      placeholder: "ბაგრატიონი",
-      className: "name",
-      comment: "მინიმუმ 2 სიმბოლო, ქართული ასოები",
+      comment: "ლათინური ასოები, ციფრები, !@#$%^&*()_+= ",
       required: true,
     },
   ];
 
 
-  const selectTeamInput = [
+  const selectLaptopBrand = [
     {
-      id: 3,
-      name: "team_id",
+      id: 8,
+      name: "laptop_brand_id",
       required: true,
     },
   ];
 
-  let currentTeamId = values.team_id;
 
-  const selectPositionInput = [
+  const selectCpu = [
     {
-      id: 4,
-      name: "position_id",
-      posId: { currentTeamId },
+      id: 9,
+      name: "laptop_cpu",
       required:true,
     },
   ];
 
   console.log(values.token);
 
-  const inputs2 = [
+  const input2 = [
     {
       id: 5,
-      type: "email",
-      label: "მეილი",
-      name: "email",
-      placeholder: "grish666@redberry.ge",
-      className: "contact-field",
-      comment: "უნდა მთავრდებოდეს @redberry.ge-ით",
-      pattern: "^[a-z0-9](\.?[a-z0-9]){5,}@r(oogle)?edberry\.ge$",
+      type: "number",
+      label: "CPU-ს ბირთვი",
+      name: "laptop_cpu_cores",
+      placeholder: "14",
+      className: "contact-field cpu-width",
+      comment: "მხოლოდ ციფრები",
       required: true,
     },
 
     {
       id: 6,
-      type: "text",
-      label: "ტელეფონის ნომერი ",
+      type: "number",
+      label: "CPU-ს ნაკადი",
       name: "phone_number",
       placeholder: "+995 598 00 07 01",
-      className: "contact-field",
-      comment: "უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს",
-      pattern: "^(\+/995[0-9]{9})$",
+      className: "laptop_cpu_threads",
+      comment: "მხოლოდ ციფრები",
       required: true,
     },
   ];
@@ -141,8 +126,8 @@ const CreateLaptopInfo = (props) => {
               onChange={onDrag}
               />
           </div>
-          <div className="container inputs-container">
-            {inputs.map((input) => (
+          <div className="container inputs-container underline">
+            {input1.map((input) => (
               <TextInput
                 key={input.id}
                 {...input}
@@ -150,9 +135,8 @@ const CreateLaptopInfo = (props) => {
                 onChange={onChange}
               />
             ))}
-          </div>
-          {selectTeamInput.map((input) => (
-            <SelectedInput
+            {selectLaptopBrand.map((input) => (
+            <LaptopBrand
               key={input.id}
               {...input}
               value={values[input.name]}
@@ -160,8 +144,12 @@ const CreateLaptopInfo = (props) => {
             />
           ))}
 
-          {selectPositionInput.map((input) => (
-            <SelectedPosition
+          </div >
+              
+
+          <div className="container contact-info cpu-info">
+          {selectCpu.map((input) => (
+            <Cpu
               key={input.id}
               {...input}
               value={values[input.name]}
@@ -169,8 +157,7 @@ const CreateLaptopInfo = (props) => {
             />
           ))}
 
-          <div className="container contact-info">
-            {inputs2.map((input) => (
+            {input2.map((input) => (
               <TextInput
                 key={input.id}
                 {...input}
